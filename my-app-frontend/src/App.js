@@ -1,10 +1,10 @@
-import Home from "./Home";
+
 import ReceipePage from "./ReceipePage";
+import Cart from "./Cart";
 
 function App() {
   return (
     <div className="App">
-      <Home />
       <Cart />
       <ReceipePage />
 
