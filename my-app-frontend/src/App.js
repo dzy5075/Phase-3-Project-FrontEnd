@@ -5,6 +5,7 @@ function App() {
   return (
     <div className="App">
       <Home />
+      <Cart />
       <ReceipePage />
 
     </div>
