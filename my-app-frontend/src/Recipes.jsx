@@ -1,7 +1,21 @@
-function Receipes(){
+function Receipes({receipes}){
+
     return(
-        <div>show casing all of the recipes. Have image tag, and paragraph to descrip recipe. Will have multiple cards</div>
+       <>
+          
+        {receipes.map((receipe) =>{ 
+            return(
+
+                    <figure className = 'receipe'>
+                        <img src={receipe.strMealThumb} alt=""></img>
+                        <figcaption>{receipe.strMeal}</figcaption>
+                    </figure>
+                    )
+        })}
+
+   
+            </>
     )
 }
 
-export default Receipes
+export default Receipes;

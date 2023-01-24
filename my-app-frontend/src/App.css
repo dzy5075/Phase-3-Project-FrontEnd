@@ -1,0 +1,52 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.App{
+    height:100vh;
+    width:100vw;
+}
+
+#receipe-page{
+    height:95%;
+    width:95%; 
+    border-width: 2px;
+    border-color: red;
+    border-style: solid;
+    display: flexbox;
+    flex-direction: column;
+    
+}
+
+#cart{
+    width: 75vw;
+    height: 250px;
+    border-width: 2px;
+    border-color: orange;
+    border-style: solid;
+}
+
+.receipe{
+    display: flexbox;
+    width: 200px;
+    height:200px;
+    float:left;
+    margin:1rem;
+    padding:1rem;
+    border-style: ridge;
+    border-color: aquamarine;
+    background-color: bisque;
+}
+
+.receipe > img{
+    height:175px;
+    padding-left: 1rem;
+}
+
+.receipe > figcaption{
+    padding-left: 1.5rem;
+}
+
+
+
+

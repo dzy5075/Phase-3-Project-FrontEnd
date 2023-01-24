@@ -1,6 +1,6 @@
 const Cart = () => {
     return ( 
-        <div>user cart that holds a list of all grocery items
+        <div id = 'cart'>user cart that holds a list of all grocery items
             <ul>
                 <li>chicken</li>
                 <li>brocolli</li>
