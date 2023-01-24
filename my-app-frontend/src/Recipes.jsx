@@ -1,21 +1,26 @@
-function Receipes({receipes}){
+import {useNavigate} from 'react-router-dom'
 
+function Recipes({recipes}){
+    let navigate = useNavigate();
     return(
        <>
-          
-        {receipes.map((receipe) =>{ 
+        {recipes.map((recipe) =>{ 
             return(
 
-                    <figure className = 'receipe'>
-                        <img src={receipe.strMealThumb} alt=""></img>
-                        <figcaption>{receipe.strMeal}</figcaption>
+                    <figure className = 'recipe'>
+                        <img src={recipe.strMealThumb} alt=""></img>
+                        <figcaption>{recipe.strMeal}</figcaption>
+                        <button>Add to Cart</button>
+                        <button onClick={() => {navigate('/singlerecipe')}}>Recipe Info</button>
                     </figure>
                     )
         })}
 
    
-            </>
+        </>
     )
 }
 
-export default Receipes;
+export default Recipes;
+
+

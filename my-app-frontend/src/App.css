@@ -8,7 +8,7 @@
     background-color: rgba(212, 25, 25, 0.138);
 }
 
-#receipe-page{
+#recipe-page{
     height:95%;
     width:95%; 
     border-width: 2px;
@@ -27,7 +27,7 @@
     border-style: solid;
 }
 
-.receipe{
+.recipe{
     display: flexbox;
     width: 200px;
     height:200px;
@@ -40,12 +40,12 @@
     margin-left: 2rem;
 }
 
-.receipe > img{
+.recipe > img{
     height:175px;
     padding-left: 1rem;
 }
 
-.receipe > figcaption{
+.recipe > figcaption{
     padding-left: 1.5rem;
 }
 
@@ -54,6 +54,8 @@ ul {
     margin: 0;
     padding: 0;
   }
+
+ 
 
 
 

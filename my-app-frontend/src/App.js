@@ -1,11 +1,11 @@
 import "./App.css"
-import ReceipePage from "./ReceipePage";
+import RecipePage from "./RecipePage";
 import Cart from "./Cart";
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import SingleReceipe from "./SingleReceipe";
+import SingleRecipe from "./SingleRecipe";
 
 
 function App() {
@@ -14,11 +14,11 @@ function App() {
     [
       {
         path: '/',
-        element: <ReceipePage />
+        element: <RecipePage />
       },
       {
         path:'/singlerecipe',
-        element: <SingleReceipe />
+        element: <SingleRecipe />
       },
       {
         path: '/cart',
