@@ -15,15 +15,28 @@ function App() {
     [
       {
         path: '/',
-        element: <RecipePage />
+        element: <>
+          <RecipePage/>
+          <NavBar/>
+          </>
+      
       },
       {
         path:'/singlerecipe',
-        element: <SingleRecipe />
+        element: 
+        <>
+        <NavBar/>
+        <SingleRecipe />
+        </>
       },
       {
         path: '/cart',
-        element:<Cart />
+        element:
+        <>
+        <NavBar/>
+        <Cart/>
+        </>
+        
       },
       {
         path:'*',
