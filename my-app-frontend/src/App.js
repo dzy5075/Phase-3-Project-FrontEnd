@@ -1,6 +1,7 @@
 import "./App.css"
 import RecipePage from "./RecipePage";
 import Cart from "./Cart";
+import NavBar from "./NavBar"
 import {
   createBrowserRouter,
   RouterProvider,
