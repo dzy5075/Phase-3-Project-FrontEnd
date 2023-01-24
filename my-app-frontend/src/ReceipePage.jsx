@@ -1,6 +1,7 @@
 import Receipes from "./Recipes";
 import SingleReceipe from "./SingleReceipe";
 import { useEffect,useState } from "react";
+import NavBar from "./NavBar";
 
 const ReceipePage = () => {
     const[receipes,setReceipe]= useState([])
@@ -23,6 +24,7 @@ const ReceipePage = () => {
     return ( 
         <>
         <div id='receipe-page'>
+        <NavBar />
         <Receipes key = {receipes.idMeal} receipes = {receipes}/>
         {/* <SingleReceipe /> */}
         </div>
