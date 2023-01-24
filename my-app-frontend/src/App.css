@@ -5,6 +5,7 @@
 .App{
     height:100vh;
     width:100vw;
+    background-color: rgba(212, 25, 25, 0.138);
 }
 
 #receipe-page{
@@ -34,8 +35,9 @@
     margin:1rem;
     padding:1rem;
     border-style: ridge;
-    border-color: aquamarine;
-    background-color: bisque;
+    border-color: rgb(86, 109, 8);
+    background-color: rgb(234, 234, 234);
+    margin-left: 2rem;
 }
 
 .receipe > img{
@@ -46,6 +48,7 @@
 .receipe > figcaption{
     padding-left: 1.5rem;
 }
+
 
 
 
