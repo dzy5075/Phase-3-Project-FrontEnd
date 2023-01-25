@@ -1,14 +1,9 @@
-const Cart = () => {
+import Recipes from "./Recipes";
+
+const Cart = ({recipes, addToCart}) => {
     return ( 
         <div id = 'cart'>user cart that holds a list of all grocery items
-            <ul>
-                <li>chicken</li>
-                <li>brocolli</li>
-                <li>garlic cloves</li>
-                <li>tomatoes</li>
-                <li>bread</li>
-            </ul>
-
+            <Recipes key = {recipes.idMeal} recipes = {recipes}/>
 
         </div>
      );

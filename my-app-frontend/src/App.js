@@ -1,4 +1,5 @@
 import "./App.css"
+import {useState} from "react";
 import RecipePage from "./RecipePage";
 import Cart from "./Cart";
 import NavBar from "./NavBar"
@@ -11,13 +12,19 @@ import SingleRecipe from "./SingleRecipe";
 
 
 function App() {
+  const[recipes,setRecipe]= useState([])
+  const [toCart, setToCart] = useState([])
+
+  const addToCart = (recipes) => {
+    setToCart([...toCart,recipes])
+  }
 
   const router = createBrowserRouter(
     [
       {
         path: '/',
         element: <>
-          <RecipePage/>
+          <RecipePage recipes={recipes} setRecipe={setRecipe} addToCard={addToCart}/>
           </>
       
       },
@@ -34,7 +41,7 @@ function App() {
         element:
         <>
         <NavBar/>
-        <Cart/>
+        <Cart recipes={recipes} addToCard={addToCart}/>
         </>
         
       },

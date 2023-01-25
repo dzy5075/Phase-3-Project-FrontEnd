@@ -1,11 +1,11 @@
 import Recipes from "./Recipes";
 import SingleRecipe from "./SingleRecipe";
-import { useEffect,useState } from "react";
+import {useEffect} from "react";
 import NavBar from "./NavBar";
 import Search from "./Search"
 
-const RecipePage = () => {
-    const[recipes,setRecipe]= useState([])
+const RecipePage = ({recipes,setRecipe,addToCart}) => {
+    
 
     const fetchRecipe = async() => {
         let req = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=chicken')
