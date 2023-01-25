@@ -6,7 +6,7 @@ import NavBar from "./NavBar"
 import Search from "./Search"
 import {
   createBrowserRouter,
-  RouterProvider,
+  RouterProvider
 } from "react-router-dom";
 import SingleRecipe from "./SingleRecipe";
 
@@ -14,17 +14,28 @@ import SingleRecipe from "./SingleRecipe";
 function App() {
   const[recipes,setRecipe]= useState([])
   const [toCart, setToCart] = useState([])
+  const [singleRecipe, setSingleRecipe] = useState([])
+
+
 
   const addToCart = (recipes) => {
     setToCart([...toCart,recipes])
   }
+
+  function fetchSingleRecipe(id) {
+    console.log(id)
+    fetch(`http://localhost:9292/recipes/${id}`)
+    .then(res => res.json())
+    .then(res => setSingleRecipe(res))
+    console.log(singleRecipe)
+}
 
   const router = createBrowserRouter(
     [
       {
         path: '/',
         element: <>
-          <RecipePage recipes={recipes} setRecipe={setRecipe} addToCard={addToCart}/>
+          <RecipePage recipes={recipes} setRecipe={setRecipe} addToCard={addToCart} fetchSingleRecipe={fetchSingleRecipe}/>
           </>
       
       },
@@ -33,7 +44,7 @@ function App() {
         element: 
         <>
         <NavBar/>
-        <SingleRecipe/>
+        <SingleRecipe singleRecipe={singleRecipe} />
         </>
       },
       {

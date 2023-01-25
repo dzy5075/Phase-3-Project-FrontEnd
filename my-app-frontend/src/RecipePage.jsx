@@ -4,15 +4,13 @@ import {useEffect} from "react";
 import NavBar from "./NavBar";
 import Search from "./Search"
 
-const RecipePage = ({recipes,setRecipe,addToCart}) => {
+const RecipePage = ({recipes,setRecipe,addToCart,fetchSingleRecipe}) => {
     
 
     const fetchRecipe = async() => {
-        let req = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=chicken')
-        let res   = await req.json()
-        console.log(res.meals)
-        
-        setRecipe(res.meals)
+        let req = await fetch('http://localhost:9292/recipes')
+        let res   = await req.json()        
+        setRecipe(res)
         
     } 
 
@@ -33,7 +31,7 @@ const RecipePage = ({recipes,setRecipe,addToCart}) => {
         <div id='recipe-page'>
         <NavBar/>
         <Search/>
-        <Recipes key = {recipes.idMeal} recipes = {recipes}/>
+        <Recipes recipes = {recipes} fetchSingleRecipe={fetchSingleRecipe}/>
         {/* <Singlerecipe /> */}
         </div>
         
