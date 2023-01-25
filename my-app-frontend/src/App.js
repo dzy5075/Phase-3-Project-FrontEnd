@@ -13,14 +13,16 @@ import SingleRecipe from "./SingleRecipe";
 
 function App() {
   const[recipes,setRecipe]= useState([])
-  const [toCart, setToCart] = useState([])
+  const [cartItems, setCartItems] = useState([])
   const [singleRecipe, setSingleRecipe] = useState([])
 
 
 
-  const addToCart = (recipes) => {
-    setToCart([...toCart,recipes])
-  }
+  // function addToCart(recipe) {
+  //   console.log(recipe)
+
+  //   // setToCart([...toCart,recipes])
+  // }
 
   function fetchSingleRecipe(id) {
     console.log(id)
@@ -35,7 +37,7 @@ function App() {
       {
         path: '/',
         element: <>
-          <RecipePage recipes={recipes} setRecipe={setRecipe} addToCard={addToCart} fetchSingleRecipe={fetchSingleRecipe}/>
+          <RecipePage recipes={recipes} setRecipe={setRecipe} fetchSingleRecipe={fetchSingleRecipe}/>
           </>
       
       },
@@ -52,7 +54,7 @@ function App() {
         element:
         <>
         <NavBar/>
-        <Cart recipes={recipes} addToCard={addToCart}/>
+        <Cart cartItems={cartItems} setCartItems={setCartItems} />
         </>
         
       },

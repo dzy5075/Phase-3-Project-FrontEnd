@@ -5,7 +5,7 @@
 .App{
     height:100vh;
     width:100vw;
-    background-color: rgba(212, 25, 25, 0.138);
+    /* background-color: rgba(212, 25, 25, 0.138); */
 }
 
 #recipe-page{
@@ -55,7 +55,7 @@ ul {
     padding: 0;
   }
 
-#video {
+.video {
     /* width: 100%;
         height: 100%; */
     width: 100vw;

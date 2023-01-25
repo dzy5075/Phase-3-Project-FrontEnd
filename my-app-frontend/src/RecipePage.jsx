@@ -24,15 +24,16 @@ const RecipePage = ({recipes,setRecipe,addToCart,fetchSingleRecipe}) => {
         <>
         <div>
         
-        <video id="video" muted autoPlay={"autopnpmlay"} preload="auto" loop>
+        <video class="video" muted autoPlay={"autopnpmlay"} preload="auto" loop>
             <source src="Food - 24999 (1).mp4" type="video/mp4" />
         </video>
         
         <div id='recipe-page'>
         <NavBar/>
         <Search/>
-        <Recipes recipes = {recipes} fetchSingleRecipe={fetchSingleRecipe}/>
-        {/* <Singlerecipe /> */}
+        {/* <PotentialFeaturedRecipe? /> */}
+         {/* <PotentialRandomizerMultipleRecipes? /> */}
+        <Recipes recipes = {recipes} fetchSingleRecipe={fetchSingleRecipe} addToCart={addToCart}/>
         </div>
         
         </div>
