@@ -9,8 +9,8 @@
 }
 
 #recipe-page{
-    height:95%;
-    width:95%; 
+    height:100vw;
+    width:100vw; 
     border-width: 2px;
     border-color: red;
     border-style: solid;
@@ -30,7 +30,7 @@
 .recipe{
     display: flexbox;
     width: 200px;
-    height:200px;
+    height:250px;
     float:left;
     margin:1rem;
     padding:1rem;
@@ -46,7 +46,7 @@
 }
 
 .recipe > figcaption{
-    padding-left: 1.5rem;
+    padding-left: 3rem;
 }
 
 ul {
@@ -54,6 +54,35 @@ ul {
     margin: 0;
     padding: 0;
   }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+  }
+  
+  .logo img {
+    width: 165px;
+    height: 75px;
+    object-fit: cover;
+    object-position: top;
+    overflow: hidden;
+  }
+
+  .cartlogo {
+    margin-right: 2rem;
+  }
+
+#searchbar{
+    margin-left: 50%;
+    margin-right: auto;
+}
+
+.buttons{
+    padding: 0.25rem;
+    margin-top:1rem;
+    margin-left:1rem;
+}
 
  
 

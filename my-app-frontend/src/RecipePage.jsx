@@ -2,6 +2,7 @@ import Recipes from "./Recipes";
 import SingleRecipe from "./SingleRecipe";
 import { useEffect,useState } from "react";
 import NavBar from "./NavBar";
+import Search from "./Search"
 
 const RecipePage = () => {
     const[recipes,setRecipe]= useState([])
@@ -24,7 +25,8 @@ const RecipePage = () => {
     return ( 
         <>
         <div id='recipe-page'>
-        <NavBar />
+        <NavBar/>
+        <Search/>
         <Recipes key = {recipes.idMeal} recipes = {recipes}/>
         {/* <Singlerecipe /> */}
         </div>

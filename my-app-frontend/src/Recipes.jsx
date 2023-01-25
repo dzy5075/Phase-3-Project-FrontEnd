@@ -10,8 +10,8 @@ function Recipes({recipes}){
                     <figure className = 'recipe'>
                         <img src={recipe.strMealThumb} alt=""></img>
                         <figcaption>{recipe.strMeal}</figcaption>
-                        <button>Add to Cart</button>
-                        <button onClick={() => {navigate('/singlerecipe')}}>Recipe Info</button>
+                        <button className = "buttons">Add to Cart</button>
+                        <button className= "buttons" onClick={() => {navigate('/singlerecipe')}}>Recipe Info</button>
                     </figure>
                     )
         })}

@@ -9,10 +9,11 @@ function NavBar ({search,setSearch}){
         <nav>
             <div className = "banner">
                 <div className = "logo">
-                    <img onClick={() => {navigate('/')}} src="/QuickCart Logo.png" alt="QuickCart" href="/"/> 
+                    <img onClick={() => {navigate('/')}} src="/QuickCart Logo.png" alt="QuickCartLogo" href="/"/> 
                 </div>
-                <input type = "text" className = "recipe_search" value = {search} onChange = {handleSearch} placeholder="Filter"/> <br/>
+                <div classname = "cartlogo">
                 <button onClick={() => {navigate('/Cart')}} className = "Cart"> Cart </button> 
+                </div>
             </div>
         </nav>
     )
