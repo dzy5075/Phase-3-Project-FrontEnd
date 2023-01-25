@@ -23,12 +23,19 @@ const RecipePage = () => {
 
     return ( 
         <>
+        <div>
+        
+        <video id="video" muted autoPlay={"autopnpmlay"} preload="auto" loop>
+            <source src="Food - 24999 (1).mp4" type="video/mp4" />
+        </video>
+        
         <div id='recipe-page'>
         <NavBar />
         <Recipes key = {recipes.idMeal} recipes = {recipes}/>
         {/* <Singlerecipe /> */}
         </div>
-            
+        
+        </div>
         </>
      );
 }
