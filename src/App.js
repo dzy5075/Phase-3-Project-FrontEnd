@@ -18,21 +18,20 @@ function App() {
   //const [addToCart,setAddToCart] = useState([])
 
 
-  const postToCart = async(id) => {
-    console.log(id)
-    // let req = await fetch('http://localhost:9292/cart_items',{ 
-    //     method: "POST",
-    //     headers: {
-    //        "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //     recipe_id : recipe.id,
-    //     ingredient_id : ingredient.id,
-    //     }),
-    // })
-    // let res   = await req.json()        
-    // // setAddToCart(res)
-    // console.log(res)
+  const postToCart = async(recipe) => {
+    console.log(recipe.id)
+    let req = await fetch('http://localhost:9292/cart_items',{ 
+        method: "POST",
+        headers: {
+           "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+        recipe_id: recipe.id
+        }),
+    })
+    let res = await req.json()        
+    // setAddToCart(res)
+    console.log(res)
 }
 // useEffect(() =>{
 //     postToCart()
