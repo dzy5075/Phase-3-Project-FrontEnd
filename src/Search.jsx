@@ -12,16 +12,17 @@ function Search ({search,setSearch,setDropDown}){
           <option value="Beef">Beef</option>
           <option value="Breakfast">Breakfast</option>
           <option value="Chicken">Chicken</option>
+          <option value="Dessert">Dessert</option>
           <option value="Goat">Goat</option>
           <option value="Lamb">Lamb</option>
+          <option value="Miscellaneous">Miscellaneous</option>
           <option value="Pasta">Pasta</option>
           <option value="Pork">Pork</option>
-          <option value="SeaFood">SeaFood</option>
+          <option value="Seafood">Seafood</option>
           <option value="Side">Side</option>
-          <option value="Starter">Starte</option>
+          <option value="Starter">Starter</option>
           <option value="Vegan">Vegan</option>
           <option value="Vegetarian">Vegetarian</option>
-          <option value="Dessert">Dessert</option>
         </select>
     </div>
 

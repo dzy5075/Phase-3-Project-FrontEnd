@@ -27,9 +27,11 @@ const[dropDown,setDropDown] = useState("All")
     }
     )
 
-    const dropDownRecipes = filteredRecipes.filter(recipe => {
-        return
-    })
+    const dropDownRecipes = filteredRecipes.filter(recipe => { 
+        if (dropDown === "All") return true;
+
+        return recipe.category === dropDown;
+    });
 
 
 
@@ -46,7 +48,7 @@ const[dropDown,setDropDown] = useState("All")
         <Search search={search} setSearch={setSearch} setDropDown={setDropDown} />
         {/* <PotentialFeaturedRecipe? /> */}
          {/* <PotentialRandomizerMultipleRecipes? /> */}
-        <Recipes recipes = {filteredRecipes} fetchSingleRecipe={fetchSingleRecipe} postToCart={postToCart}/>
+        <Recipes recipes = {dropDownRecipes} fetchSingleRecipe={fetchSingleRecipe} postToCart={postToCart}/>
         </div>
         
         </div>
