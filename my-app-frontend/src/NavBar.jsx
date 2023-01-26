@@ -12,7 +12,16 @@ function NavBar ({search,setSearch}){
                     <img onClick={() => {navigate('/')}} src="/QuickCart Logo.png" alt="QuickCartLogo" href="/"/> 
                 </div>
                 <div classname = "cartlogo">
-                <button onClick={() => {navigate('/Cart')}} className = "Cart"> Cart </button> 
+                <button onClick={() => {navigate('/Cart')}} className = "Cart"> Cart </button>
+                
+                
+                <button onClick={(e) => {
+                    console.log("hello!")
+                    fetch("http://localhost:9292/cart_items", {
+                        method: "DELETE",
+                    })
+                }}
+                className = "buttons"> New Cart </button>
                 </div>
             </div>
         </nav>
