@@ -12,7 +12,7 @@ import SingleRecipe from "./SingleRecipe";
 
 
 function App() {
-  const[recipes,setRecipe]= useState([])
+  
   const [cartItems, setCartItems] = useState([])
   const [singleRecipe, setSingleRecipe] = useState([])
   //const [addToCart,setAddToCart] = useState([])
@@ -56,7 +56,7 @@ function App() {
       {
         path: '/',
         element: <>
-          <RecipePage recipes={recipes} setRecipe={setRecipe} fetchSingleRecipe={fetchSingleRecipe} postToCart={postToCart}/>
+          <RecipePage  fetchSingleRecipe={fetchSingleRecipe} postToCart={postToCart}/>
           </>
       
       },

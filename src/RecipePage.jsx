@@ -1,10 +1,14 @@
 import Recipes from "./Recipes";
 import SingleRecipe from "./SingleRecipe";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import NavBar from "./NavBar";
 import Search from "./Search"
 
-const RecipePage = ({recipes,setRecipe,postToCart,fetchSingleRecipe}) => {
+const RecipePage = ({postToCart,fetchSingleRecipe}) => {
+const [search, setSearch] = useState("")
+const[recipes,setRecipe]= useState([])
+const[dropDown,setDropDown] = useState("All")
+
     
 
     const fetchRecipe = async() => {
@@ -18,7 +22,16 @@ const RecipePage = ({recipes,setRecipe,postToCart,fetchSingleRecipe}) => {
         fetchRecipe()
     },[])
 
-    
+    const filteredRecipes = recipes.filter(recipe => {
+        return recipe.name.toLowerCase().includes(search.toLowerCase())
+    }
+    )
+
+    const dropDownRecipes = filteredRecipes.filter(recipe => {
+        return
+    })
+
+
 
     return ( 
         <>
@@ -30,10 +43,10 @@ const RecipePage = ({recipes,setRecipe,postToCart,fetchSingleRecipe}) => {
         
         <div id='recipe-page'>
         <NavBar/>
-        <Search/>
+        <Search search={search} setSearch={setSearch} setDropDown={setDropDown} />
         {/* <PotentialFeaturedRecipe? /> */}
          {/* <PotentialRandomizerMultipleRecipes? /> */}
-        <Recipes recipes = {recipes} fetchSingleRecipe={fetchSingleRecipe} postToCart={postToCart}/>
+        <Recipes recipes = {filteredRecipes} fetchSingleRecipe={fetchSingleRecipe} postToCart={postToCart}/>
         </div>
         
         </div>
