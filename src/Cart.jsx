@@ -13,7 +13,11 @@ const Cart = ({cartItems, setCartItems}) => {
         fetchCartItems()
     },[])
 
-    return ( 
+    return (
+        <>
+                <video class="video" muted autoPlay={"autopnpmlay"} preload="auto" loop>
+            <source src="Vegetable Stand - 151 (3).mp4" type="video/mp4" />
+        </video>
         <div id = 'cart'>user cart that holds a list of all grocery items
             {cartItems.map((cartItem) =>{
                 return (
@@ -21,6 +25,8 @@ const Cart = ({cartItems, setCartItems}) => {
                 )
             })}
         </div>
+        </>
+
      );
 }
  
