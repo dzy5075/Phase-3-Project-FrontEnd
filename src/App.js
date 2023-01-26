@@ -15,12 +15,32 @@ function App() {
   const[recipes,setRecipe]= useState([])
   const [cartItems, setCartItems] = useState([])
   const [singleRecipe, setSingleRecipe] = useState([])
+  //const [addToCart,setAddToCart] = useState([])
 
+
+  const postToCart = async(id) => {
+    console.log(id)
+    // let req = await fetch('http://localhost:9292/cart_items',{ 
+    //     method: "POST",
+    //     headers: {
+    //        "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //     recipe_id : recipe.id,
+    //     ingredient_id : ingredient.id,
+    //     }),
+    // })
+    // let res   = await req.json()        
+    // // setAddToCart(res)
+    // console.log(res)
+}
+// useEffect(() =>{
+//     postToCart()
+// },[])
 
 
   // function addToCart(recipe) {
-  //   console.log(recipe)
-
+  //   // console.log(recipe)
   //   // setToCart([...toCart,recipes])
   // }
 
@@ -37,7 +57,7 @@ function App() {
       {
         path: '/',
         element: <>
-          <RecipePage recipes={recipes} setRecipe={setRecipe} fetchSingleRecipe={fetchSingleRecipe}/>
+          <RecipePage recipes={recipes} setRecipe={setRecipe} fetchSingleRecipe={fetchSingleRecipe} postToCart={postToCart}/>
           </>
       
       },
@@ -54,7 +74,7 @@ function App() {
         element:
         <>
         <NavBar/>
-        <Cart cartItems={cartItems} setCartItems={setCartItems} />
+        <Cart cartItems={cartItems} setCartItems={setCartItems} postToCart={postToCart}/>
         </>
         
       },

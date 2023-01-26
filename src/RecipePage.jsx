@@ -4,7 +4,7 @@ import {useEffect} from "react";
 import NavBar from "./NavBar";
 import Search from "./Search"
 
-const RecipePage = ({recipes,setRecipe,addToCart,fetchSingleRecipe}) => {
+const RecipePage = ({recipes,setRecipe,postToCart,fetchSingleRecipe}) => {
     
 
     const fetchRecipe = async() => {
@@ -33,7 +33,7 @@ const RecipePage = ({recipes,setRecipe,addToCart,fetchSingleRecipe}) => {
         <Search/>
         {/* <PotentialFeaturedRecipe? /> */}
          {/* <PotentialRandomizerMultipleRecipes? /> */}
-        <Recipes recipes = {recipes} fetchSingleRecipe={fetchSingleRecipe} addToCart={addToCart}/>
+        <Recipes recipes = {recipes} fetchSingleRecipe={fetchSingleRecipe} postToCart={postToCart}/>
         </div>
         
         </div>

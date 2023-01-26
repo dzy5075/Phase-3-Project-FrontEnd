@@ -1,7 +1,7 @@
 import {useNavigate} from 'react-router-dom'
 import {useState} from 'react';
 
-function Recipes({recipes,addToCart,fetchSingleRecipe}){
+function Recipes({recipes,postToCart,fetchSingleRecipe}){
     let navigate = useNavigate();
     const [isFavorite, setIsFavorite] = useState(false)
 
@@ -28,7 +28,7 @@ function Recipes({recipes,addToCart,fetchSingleRecipe}){
                     <figure className = 'recipe' key = {recipe.id} id = {recipe.id}>
                         <img src={recipe.image} alt=""></img>
                         <figcaption>{recipe.name}</figcaption>
-                        <button className= "buttons" onClick={()=>{addToCart(recipe)}}>Add to Cart</button>
+                        <button className= "buttons" onClick={()=>{postToCart(recipe)}}>Add to Cart</button>
                         {/* <button className= "buttons" onClick={() => }>Recipe Info</button> */}
                         <button className= "buttons" onClick={(e) => {
                             fetchSingleRecipe(recipe.id)

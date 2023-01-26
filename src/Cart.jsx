@@ -1,7 +1,9 @@
 // import Recipes from "./Recipes";
 import { useEffect } from "react";
 
-const Cart = ({cartItems, setCartItems}) => {
+const Cart = ({cartItems, setCartItems, addToCart, setAddToCart}) => {
+
+    
 
     const fetchCartItems = async() => {
         let req = await fetch('http://localhost:9292/cart_items')
@@ -22,6 +24,8 @@ const Cart = ({cartItems, setCartItems}) => {
             {cartItems.map((cartItem) =>{
                 return (
                     console.log(cartItem.recipe_id)
+
+
                 )
             })}
         </div>
