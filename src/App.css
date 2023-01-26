@@ -71,9 +71,24 @@ ul {
 
 .logo {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     margin-left: 2rem;
+    
   }
+
+  .right-btns {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-right: 1px;
+  }
+
+  .right-btns > button {
+    display: flex;
+    padding: 28px 45px;
+  }
+  
   
   .logo img {
     width: 165px;
@@ -98,6 +113,9 @@ ul {
     margin-left:1rem;
 }
 
-
+.banner {
+    background-color: white;
+    box-shadow: 0px 0px 8px 5px white;
+}
 
 
