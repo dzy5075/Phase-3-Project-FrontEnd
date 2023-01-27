@@ -5,32 +5,53 @@ const Cart = ({cartItems, setCartItems, addToCart, setAddToCart}) => {
 
     
 
-    const fetchCartItems = async() => {
-        let req = await fetch('http://localhost:9292/cart_items')
-        let res   = await req.json()        
-        setCartItems(res)
-        console.log(cartItems)
-    }
-    useEffect(() =>{
-        fetchCartItems()
-    },[])
+
+
+    
+    // const recipes = cartItems[0]
+    // console.log(recipes)
+    // recipes.map(rec =>{
+    //     return(
+    //         console.log(rec)
+    //     )
+    // })
+
+    // const ingredients = cartItems[1]
+    // ingredients.map(ingredient =>{
+    //     return(
+    //         console.log(ingredient)
+    //     )
+    // })
+
+    const recipe = cartItems[0].map(rec =>{
+        // console.log(recipes)
+            return(
+                <figure className = 'recipe'>
+                    <img src = {rec.image} alt={rec.name}/>
+                    <figcaption>{rec.name}</figcaption>
+                    </figure>
+                
+            )
+        })
+
+        const ingredients = cartItems[1].map(ingre =>{
+            return(
+                console.log(ingre.name),
+                console.log(ingre.quantity),
+                console.log(ingre.aisle)
+
+            )
+        })
 
     return (
         <>
                 <video class="video" muted autoPlay={"autopnpmlay"} preload="auto" loop>
             <source src="Vegetable Stand - 151 (3).mp4" type="video/mp4" />
         </video>
-        <div id = 'cart'>user cart that holds a list of all grocery items
-            {cartItems.map((cartItem) =>{
-                return (
-                    console.log(cartItem.recipe_id)
-
-
-                )
-            })}
+        <div id = 'cart'> 
+        {recipe}
         </div>
         </>
-
      );
 }
  

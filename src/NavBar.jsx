@@ -1,6 +1,6 @@
 import {useNavigate} from 'react-router-dom'
 
-function NavBar ({search,setSearch}){
+function NavBar ({search,setSearch,fetchCartItems}){
     let navigate = useNavigate();
     const handleSearch = (event) => {
         setSearch(event.target.value)
@@ -11,7 +11,12 @@ function NavBar ({search,setSearch}){
                 <div className = "logo">
                     <img onClick={() => {navigate('/')}} src="/QuickCart Logo.png" alt="QuickCartLogo" href="/"/> 
                     <div className='right-btns'>
-                        <button onClick={() => {navigate('/Cart')}} className = "Cart"> Cart </button>
+                        <button onClick={() => {
+                            
+                            fetchCartItems()
+                            navigate('/Cart')
+                            
+                            }} className = "Cart"> Cart </button>
                         
                         
                         <button onClick={(e) => {

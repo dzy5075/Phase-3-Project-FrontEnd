@@ -1,5 +1,5 @@
 import "./App.css"
-import {useState} from "react";
+import {useState,useEffect} from "react";
 import RecipePage from "./RecipePage";
 import Cart from "./Cart";
 import NavBar from "./NavBar"
@@ -51,12 +51,23 @@ function App() {
     console.log(singleRecipe)
 }
 
+const fetchCartItems = async() => {
+  let req = await fetch('http://localhost:9292/cart_items')
+  let res   = await req.json()        
+  setCartItems(res)
+  console.log(cartItems)
+}
+useEffect(() =>{
+  fetchCartItems()
+},[])
+
+
   const router = createBrowserRouter(
     [
       {
         path: '/',
         element: <>
-          <RecipePage  fetchSingleRecipe={fetchSingleRecipe} postToCart={postToCart}/>
+          <RecipePage  fetchSingleRecipe={fetchSingleRecipe} postToCart={postToCart} fetchCartItems = {fetchCartItems}/>
           </>
       
       },
@@ -64,7 +75,7 @@ function App() {
         path:'/singlerecipe',
         element: 
         <>
-        <NavBar/>
+        <NavBar fetchCartItems = {fetchCartItems}/>
         <SingleRecipe singleRecipe={singleRecipe} />
         </>
       },
@@ -72,7 +83,7 @@ function App() {
         path: '/cart',
         element:
         <>
-        <NavBar/>
+        <NavBar fetchCartItems={fetchCartItems}/>
         <Cart cartItems={cartItems} setCartItems={setCartItems} postToCart={postToCart}/>
         </>
         
