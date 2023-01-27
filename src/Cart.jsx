@@ -36,27 +36,31 @@ const Cart = ({cartItems, setCartItems, addToCart, setAddToCart}) => {
 
         const ingredients = cartItems[1].map(ingre =>{
             return(
-                <li className='cart-list'> {ingre.aisle}  {ingre.name} {ingre.quantity}</li>
-
+                <li className='cart-list'> {ingre.name} - {ingre.quantity} - {ingre.aisle} </li>
             )
         })
 
     return (
-        <>
-                <video class="video" muted autoPlay={"autopnpmlay"} preload="auto" loop>
+
+
+        <div id='cart'>
+
+<video class="video" muted autoPlay={"autopnpmlay"} preload="auto" loop>
             <source src="Vegetable Stand - 151 (3).mp4" type="video/mp4" />
         </video>
-        <div id='cart'> 
+
 
         <div id = 'cart-recipes'> 
         {recipe}
         </div>
-        <div id = 'cart-ingredients'> 
 
+        <div id = 'cart-ingredients'>
+            <ul>
         {ingredients}
+        </ul>
         </div>
+
         </div>
-        </>
      );
 }
  
