@@ -29,7 +29,7 @@ const[dropDown,setDropDown] = useState("All")
 
     const dropDownRecipes = filteredRecipes.filter(recipe => { 
         if (dropDown === "All") return true;
-
+        else if (dropDown === "Favorites") return recipe.favorite
         return recipe.category === dropDown;
     });
 

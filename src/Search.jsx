@@ -9,6 +9,7 @@ function Search ({search,setSearch,setDropDown}){
     <input type = "text" className = "recipe_search" value = {search} onChange = {(e) => {setSearch(e.target.value)}} placeholder="Filter"/> <br/>
     <select name="filter" onChange={(e) => setDropDown(e.target.value)}>
           <option value="All">Filter by category</option>
+          <option>Favorites</option>
           <option value="Beef">Beef</option>
           <option value="Breakfast">Breakfast</option>
           <option value="Chicken">Chicken</option>
