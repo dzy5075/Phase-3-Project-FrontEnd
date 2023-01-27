@@ -26,19 +26,17 @@ const Cart = ({cartItems, setCartItems, addToCart, setAddToCart}) => {
     const recipe = cartItems[0].map(rec =>{
         // console.log(recipes)
             return(
-                <figure className = 'recipe'>
-                    <img src = {rec.image} alt={rec.name}/>
+                <figure className = 'cart-recipe'>
+                    <img  src = {rec.image} alt={rec.name}/>
                     <figcaption>{rec.name}</figcaption>
-                    </figure>
+                </figure>
                 
             )
         })
 
         const ingredients = cartItems[1].map(ingre =>{
             return(
-                console.log(ingre.name),
-                console.log(ingre.quantity),
-                console.log(ingre.aisle)
+                <li className='cart-list'> {ingre.aisle}  {ingre.name} {ingre.quantity}</li>
 
             )
         })
@@ -48,8 +46,15 @@ const Cart = ({cartItems, setCartItems, addToCart, setAddToCart}) => {
                 <video class="video" muted autoPlay={"autopnpmlay"} preload="auto" loop>
             <source src="Vegetable Stand - 151 (3).mp4" type="video/mp4" />
         </video>
-        <div id = 'cart'> 
+        <div id='cart'> 
+
+        <div id = 'cart-recipes'> 
         {recipe}
+        </div>
+        <div id = 'cart-ingredients'> 
+
+        {ingredients}
+        </div>
         </div>
         </>
      );
